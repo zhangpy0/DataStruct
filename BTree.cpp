@@ -164,18 +164,18 @@ public:
     }
 
     int getdepth(node * root)
+    {
+        if (root == NULL)
         {
-            if (root == NULL)
-            {
-                return 0;
-            }
-            else
-            {
-                int left = getdepth(root->left);
-                int right = getdepth(root->right);
-                return max(left,right) + 1;
-            }
+            return 0;
         }
+        else
+        {
+            int left = getdepth(root->left);
+            int right = getdepth(root->right);
+            return max(left,right) + 1;
+        }
+    }
 
     int depth()
     {
