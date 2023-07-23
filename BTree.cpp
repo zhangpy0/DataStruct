@@ -414,6 +414,27 @@ public:
         }
     }
 
+    node * SortBTreeSearch(int val)
+    {
+        node * temp = root;
+        while (temp != NULL)
+        {
+            if (temp->DATA.num == val)
+            {
+                return temp;
+            }
+            else if (temp->DATA.num > val)
+            {
+                temp = temp->left;
+            }
+            else
+            {
+                temp = temp->right;
+            }
+        }
+        return NULL;
+    }
+
     void ReConstruct(vector<char>& pre, vector<char>& in)
     {
         if (pre.size() != in.size())
