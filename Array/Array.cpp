@@ -29,11 +29,11 @@ public:
     void erase(int index);
     void erase(int start, int end);
 
-    int getsize();
+    virtual int getsize();
     int getcapacity();
     T& get(int index);
     void set(int index, T data);
-    bool empty();
+    virtual bool empty();
     void clear();
     void resize(int capacity);
 
