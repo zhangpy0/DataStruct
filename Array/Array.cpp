@@ -85,7 +85,7 @@ Array<T>::Array()
 template<typename T>
 Array<T>::Array(int capacity)
 {
-    this->size = 0;
+    this->size = capacity;
     this->capacity = capacity;
     this->data = new Data<T>[this->capacity];
     this->iterator = nullptr;
@@ -222,7 +222,7 @@ T& Array<T>::get(int index)
 template<typename T>
 void Array<T>::set(int index, T data)
 {
-    if (index < 0 || index >= this->size)
+    if (index < 0 || index >= this->capacity)
     {
         throw std::out_of_range("Index out of range");
         return;
@@ -268,7 +268,7 @@ void Array<T>::resize(int capacity)
 template<typename T>
 T& Array<T>::operator[](int index)
 {
-    if (index < 0 || index >= this->size)
+    if (index < 0 || index >= this->capacity)
     {
         throw std::out_of_range("Index out of range");
         return this->data[0].getData();
